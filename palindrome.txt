@@ -1,0 +1,22 @@
+import 'dart:io';
+
+bool isPalindrome(int number) {
+  String original = number.toString();
+  String reversed = original.split('').reversed.join('');
+  return original == reversed;
+}
+
+void main() {
+ 
+  stdout.write('Enter a number :');
+  String Input = stdin.readLineSync() ?? '';
+  
+ 
+  int Number = int.tryParse(Input) ?? 0;
+
+  if (isPalindrome(Number)) {
+    print('$Number is a palindrome.');
+  } else {
+    print('$Number is not a palindrome.');
+  }
+}
